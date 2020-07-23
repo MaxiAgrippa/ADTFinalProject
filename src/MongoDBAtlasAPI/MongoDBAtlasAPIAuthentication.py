@@ -10,8 +10,8 @@ class MongoDBAtlasAPIAuthentication:
         """
         self._username = "m220student"  # username
         self._password = "m220password"  # password
-        self._cluster = "mflix.8tenw.gcp.mongodb.net"  # the cluster we gonna use
-        self._database = "test"  # the database
+        self._cluster = "mflix.8tenw.gcp.mongodb.net"  # the cluster we gonna use (maybe)
+        self._database = "test"  # the database (maybe)
 
     def _format_connection_url(self):
         """
