@@ -8,9 +8,9 @@ from pprint import pprint
 # Yahoo Financial Demo:
 import requests
 
-url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/list"
+url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-historical-data"
 
-querystring = {"category": "generalnews", "region": "US"}
+querystring = {"frequency": "1d", "filter": "history", "period1": "1546448400", "period2": "1562086800", "symbol": "AMRN"}
 
 headers = {
     'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
