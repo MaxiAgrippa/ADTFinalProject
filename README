@@ -12,4 +12,5 @@ Current Struggle:
 choose yahoo financial API(YFA) or yfinancial?
 YFA have more information about schema, but the timestamp they are using need to convert. Moreover, it has limit.
 yfinancial is totally free and don't have any access limit. BUT, the data schema is not obvious.
+Temporary using YFA.
 
