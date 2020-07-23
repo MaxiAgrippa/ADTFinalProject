@@ -1,6 +1,6 @@
 import pymongo
 import pprint
-from bson.json_util import dumps;
+from bson.json_util import dumps
 from pymongo import MongoClient
 
 # url: mongodb+srv://<username>:<password>@<cloud location???>/<cluster???>

@@ -3,10 +3,14 @@ pip install --upgrade requests
 pip install -U pandas
 pip install -U yfinance
 pip install -U lxml
+pip install -U pymongo
+pip install -U dnspython
 
 useful link:
 Time convert between epoch second and normal:
 https://www.epochconverter.com
+Json beautify
+https://jsonformatter.curiousconcept.com
 
 Current Struggle:
 choose yahoo financial API(YFA) or yfinancial?
