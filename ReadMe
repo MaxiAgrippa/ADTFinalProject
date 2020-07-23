@@ -1,5 +1,0 @@
-pip requirement:
-pip install --upgrade requests
-pip install -U pandas
-pip install -U yfinance
-pip install -U lxml
