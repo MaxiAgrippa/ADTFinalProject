@@ -1,4 +1,4 @@
-from src.YahooFinanceAPIManager.yahoo_finance_API_authentication import *
+from src.YahooFinanceAPIManager.YahooFinanceAPIAuthentication import *
 
 
 class YahooFinanceAPIManager:
