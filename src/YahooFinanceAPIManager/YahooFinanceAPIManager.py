@@ -1,4 +1,6 @@
 from src.YahooFinanceAPIManager.YahooFinanceAPIAuthentication import *
+# TEST: using json.loads to convert the string result to a json style. SUCCESS
+import json
 
 
 class YahooFinanceAPIManager:
@@ -54,6 +56,10 @@ def main():
     print(result.text)
     print("\n")
     print(result2.text)
+    print("\n")
+    # TEST: using json.loads to convert the string result to a json style. SUCCESS
+    json_obj = json.loads(result.text)
+    print(json_obj["prices"])
 
 
 if __name__ == '__main__':
