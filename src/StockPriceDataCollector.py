@@ -36,7 +36,6 @@ class StockPriceDataCollector:
             # TEST:
             print(data)
 
-
         else:
             print("Yahoo Finance API Manager request result is Empty.")
 
