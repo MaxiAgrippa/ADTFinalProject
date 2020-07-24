@@ -9,13 +9,13 @@
                     "date": {
                         "type": "integer"
                     }
-    "open": {
+                    "open": {
                         "type": "number"
                     }
-    "close": {
+                    "close": {
                         "type": "number"
                     }
-    "volume": {
+                    "volume": {
                         "type": "integer"
                     }
                 }

@@ -11,6 +11,8 @@ Time convert between epoch second and normal:
 https://www.epochconverter.com
 Json beautify
 https://jsonformatter.curiousconcept.com
+Add document to an array
+https://docs.mongodb.com/manual/reference/operator/update/addToSet/#up._S_addToSet
 
 Current Struggle:
 choose yahoo financial API(YFA) or yfinancial?
