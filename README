@@ -23,3 +23,5 @@ Temporary using YFA.
 2. About data structure:(FIXED)
 I guess we should give each company a "table", but currently we are only using one "table" for one company, I decide to go for it and fix it later.
 
+3. Reduce the data duplication caused by add stock price data.
+potential solution: https://stackoverflow.com/questions/14184099/fastest-way-to-remove-duplicate-documents-in-mongodb

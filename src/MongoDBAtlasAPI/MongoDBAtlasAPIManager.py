@@ -25,6 +25,7 @@ class MongoDBAtlasAPIManager:
         :param json_data_array: json data array(document array)
         :return: result: the result from connection object.
         """
+        # rename the authentication
         client = self._authentication
         try:
             # insert many document object, automatically set _id as default.
@@ -39,12 +40,14 @@ class MongoDBAtlasAPIManager:
         drop the StockPrice table(?)
         :param company: the company(table) you want to drop
         """
+        # rename the authentication
         client = self._authentication
         try:
             result = client.StockMarket[company].drop()
         except Exception as e:
             print(e)
 
+    # FIXME: delete duplicated data 
     def add_data_stock_price_data(self, company, json_data_array):
         """
         add data to StockPrice
@@ -52,9 +55,10 @@ class MongoDBAtlasAPIManager:
         :param json_data_array: json format data that gonna add to the document
         :return: result: the result from connection object.
         """
+        # rename the authentication
         client = self._authentication
         try:
-            if self._check_stock_price_data_existence(company):
+            if self.check_stock_price_data_existence(company):
                 # need to use "$each" in the json_data_array to add multiple values to the array field.
                 result = client.StockMarket[company].update_many({}, {"$addToSet": json_data_array})
             else:
@@ -63,12 +67,13 @@ class MongoDBAtlasAPIManager:
             print(e)
         return result
 
-    def _check_stock_price_data_existence(self, company):
+    def check_stock_price_data_existence(self, company):
         """
         Check if there is any data?
         :param company: the company(table) you want to check.
         :return: True for has data, False for empty
         """
+        # rename the authentication
         client = self._authentication
         result = client.StockMarket[company].find_one({})
         if result is not None:
@@ -94,7 +99,7 @@ def main():
     #                                                  {"data": 20200726, "open": 3.2, "close": 4.3, "volume": 1000}]}})
     # print(result2)
     # TEST: check data existence SUCCESS
-    # if mdbaapim._check_stock_price_data_existence("test"):
+    # if mdbaapim.check_stock_price_data_existence("test"):
     #     print("E")
     # else:
     #     print("N")
