@@ -14,19 +14,19 @@ class YahooFinanceAPIManager:
         self._get_historical_data_url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-historical-data"
         self._get_financials_url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-financials"
 
-    def get_stock_historical_price(self, frequency="1d", filter="history", period1="1595298982", period2="1595385383",
+    def get_stock_historical_price(self, frequency="1d", data_filter="history", period1="1595298982", period2="1595385383",
                                    symbol="APPL"):
         """
         get stock historical price of a company
         :param frequency: how frequent the data is. Allow one of following : 1d|1wk|1mo
-        :param filter: Allow one of following : history|div|split TODO: what's that for/means? Currently using history.
+        :param data_filter: Allow one of following : history|div|split TODO: what's that for/means? Currently using history.
         :param period1: record start time
         :param period2: record end time
         :param symbol: The company symbol, for example Microsoft: MSFT
         :return: result object, you can get the content by access result.text(it's a json file string)
         """
         # construct query json string
-        querystring = {"frequency": frequency, "filter": filter, "period1": period1, "period2": period2, "symbol": symbol}
+        querystring = {"frequency": frequency, "filter": data_filter, "period1": period1, "period2": period2, "symbol": symbol}
         # query and store result
         result = requests.request("GET", self._get_historical_data_url, headers=self._authentication,
                                   params=querystring)

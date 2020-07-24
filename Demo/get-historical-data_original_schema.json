@@ -24,6 +24,9 @@
     "id": {
             "type": "string"
         }
+    "companySymbol": {
+            "type": "string"
+        }
     "timeZone": {
             "type": "object"
     "properties": {
