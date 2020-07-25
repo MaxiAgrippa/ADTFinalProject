@@ -47,7 +47,7 @@ class MongoDBAtlasAPIManager:
         except Exception as e:
             print(e)
 
-    # FIXME: delete duplicated data 
+    # FIXME: delete duplicated data
     def add_data_stock_price_data(self, company, json_data_array):
         """
         add data to StockPrice
@@ -61,6 +61,10 @@ class MongoDBAtlasAPIManager:
             if self.check_stock_price_data_existence(company):
                 # need to use "$each" in the json_data_array to add multiple values to the array field.
                 result = client.StockMarket[company].update_many({}, {"$addToSet": json_data_array})
+                # TODO:
+                # delete duplicated data
+                pipline = {}
+                client.StockMarket[company].aggregate(pipline)
             else:
                 print("Empty collection.")
         except Exception as e:
