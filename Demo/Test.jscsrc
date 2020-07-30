@@ -1,0 +1,42 @@
+[
+    {
+        "date": 1595856600,
+        "open": 1513.260009765625,
+        "close": 1529.4300537109375,
+        "volume": 1356200,
+        "companySymbol": "GOOGL",
+        "timeZone": {
+            "gmtOffset": -14400
+        }
+    },
+    {
+        "date": 1595856600,
+        "open": 1513.260009765625,
+        "close": 1529.4300537109375,
+        "volume": 1356200,
+        "companySymbol": "GOOGL",
+        "timeZone": {
+            "gmtOffset": -14400
+        }
+    },
+    {
+        "date": 1595856600,
+        "open": 1513.260009765625,
+        "close": 1529.4300537109375,
+        "volume": 1356200,
+        "companySymbol": "GOOGL",
+        "timeZone": {
+            "gmtOffset": -14400
+        }
+    },
+    {
+        "date": 1595856600,
+        "open": 1513.260009765625,
+        "close": 1529.4300537109375,
+        "volume": 1356200,
+        "companySymbol": "GOOGL",
+        "timeZone": {
+            "gmtOffset": -14400
+        }
+    }
+]

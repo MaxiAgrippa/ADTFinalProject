@@ -17,7 +17,7 @@ MongoDB aggregation pipeline
 https://docs.mongodb.com/manual/core/aggregation-pipeline/
 
 Current Struggle:
-1. choose yahoo financial API(YFA) or yfinancial?
+1. choose yahoo financial API(YFA) or yfinancial?(Update!: alpha_vantage)
 YFA have more information about schema, but the timestamp they are using need to convert. Moreover, it has limit.
 yfinancial is totally free and don't have any access limit. BUT, the data schema is not obvious.
 Temporary using YFA.
