@@ -114,7 +114,8 @@ class StockPriceDataCollector:
 def main():
     # TEST: request and store stock price data for one company: SUCCESS
     spdc = StockPriceDataCollector()
-    # spdc.add_stock_price_data("1d", "history", "1595721599", "1596133812", "GOOGL")
+    # the order is: start_period, end_period, company_symbol, frequency="1d", data_filter="history"
+    spdc.add_stock_price_data("1595908800", "1596168000", "MSFT", "1d", "history")
 
     # TEST: search stock price data for one company: SUCCESS
     # result = spdc.search_stock_price_data(1595856600, 1595856600, "GOOGL")
@@ -135,12 +136,12 @@ def main():
     #             print(r)
 
     # TEST: search stock price data advance for one company: SUCCESS
-    result4 = spdc.search_stock_price_data_advance(1595856500, 1595856700, "GOOGL", {"_id": 0})
-    print(result4)
-    if result4 is not None:
-        for r in result4:
-            if r is not None:
-                print(r)
+    # result4 = spdc.search_stock_price_data_advance(1595856500, 1595856700, "GOOGL", {"_id": 0})
+    # print(result4)
+    # if result4 is not None:
+    #    for r in result4:
+    #        if r is not None:
+    #            print(r)
 
 
 if __name__ == '__main__':

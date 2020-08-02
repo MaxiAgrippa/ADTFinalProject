@@ -12,7 +12,7 @@ class YahooFinanceAPIAuthentication:
         # if my limit is reached, switch the below part.
         self.__headers__ = {
             'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            'x-rapidapi-key': "c2829536e9msh4b1be8fae335bf0p141362jsnc364d462c0ad"
+            'x-rapidapi-key': "31e70ce77cmsh598f7175f032062p123b1fjsn8af3f9eff72a"
         }
 
     def get_Authentication(self):
