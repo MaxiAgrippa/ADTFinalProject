@@ -23,7 +23,7 @@ class MongoDBAtlasAPIAuthentication:
 
     def get_mongodb_client(self):
         """
-        connect to mongodb Atlas and retunr the connection object
+        connect to mongodb Atlas and return the connection object
         :return: client the connection object with mongodb Atlas
         """
         try:
