@@ -50,6 +50,7 @@ def main():
     """
     require 2 day of stock history price data to test.
     """
+    # TEST: getting 2 days of google stock price data and google's financial state. SUCCESS
     yfapim = YahooFinanceAPIManager()
     result = yfapim.get_stock_historical_price("1d", "history", "1595126182", "1595385382", "GOOGL")
     result2 = yfapim.get_financials("GOOGL")

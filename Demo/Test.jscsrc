@@ -1,0 +1,13 @@
+{
+    "_id": {
+        "$oid": "5f230e8277676fe95383a400"
+    },
+    "date": 1595251800,
+    "open": 1515,
+    "close": 1563.8399658203125,
+    "volume": 1508300,
+    "companySymbol": "GOOGL",
+    "timeZone": {
+        "gmtOffset": -14400
+    }
+}

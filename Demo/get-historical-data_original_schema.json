@@ -1,35 +1,24 @@
 {
     "type": "object"
     "properties": {
-        "prices": {
-            "type": "array"
-    "items": {
-                "type": "object"
-    "properties": {
-                    "date": {
-                        "type": "integer"
-                    }
-                    "open": {
-                        "type": "number"
-                    }
-                    "close": {
-                        "type": "number"
-                    }
-                    "volume": {
-                        "type": "integer"
-                    }
-                }
-            }
+        "date": {
+            "type": "integer"
         }
-    "id": {
+        "open": {
+            "type": "number"
+        }
+        "close": {
+            "type": "number"
+        }
+        "volume": {
+            "type": "integer"
+        }
+        "companySymbol": {
             "type": "string"
         }
-    "companySymbol": {
-            "type": "string"
-        }
-    "timeZone": {
+        "timeZone": {
             "type": "object"
-    "properties": {
+            "properties": {
                 "gmtOffset": {
                     "type": "integer"
                 }
