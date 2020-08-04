@@ -35,11 +35,12 @@ class StockPriceDataCollector:
             json_obj = json.loads(result.text)
             # copy part of prices from the original data
             for price in json_obj["prices"]:
-                # store the extracted data for each data unit
-                data = {"date": price["date"], "open": price["open"], "close": price["close"], "volume": price[
-                    "volume"], "companySymbol": company_symbol, "timeZone": json_obj["timeZone"]}
-                # append the data unit to datas array for insert many data in one time.
-                datas.append(data)
+                if "open" in price:
+                    # store the extracted data for each data unit
+                    data = {"date": price["date"], "open": price["open"], "close": price["close"], "volume": price[
+                        "volume"], "companySymbol": company_symbol, "timeZone": json_obj["timeZone"]}
+                    # append the data unit to datas array for insert many data in one time.
+                    datas.append(data)
             # TEST:
             print(datas)
             # insert datas to the collection.
@@ -115,7 +116,7 @@ def main():
     # TEST: request and store stock price data for one company: SUCCESS
     spdc = StockPriceDataCollector()
     # the order is: start_period, end_period, company_symbol, frequency="1d", data_filter="history"
-    spdc.add_stock_price_data("1595908800", "1596168000", "MSFT", "1d", "history")
+    spdc.add_stock_price_data("0", "1596168000", "GOOGL", "1d", "history")
 
     # TEST: search stock price data for one company: SUCCESS
     # result = spdc.search_stock_price_data(1595856600, 1595856600, "GOOGL")
@@ -139,9 +140,9 @@ def main():
     # result4 = spdc.search_stock_price_data_advance(1595856500, 1595856700, "GOOGL", {"_id": 0})
     # print(result4)
     # if result4 is not None:
-    #    for r in result4:
-    #        if r is not None:
-    #            print(r)
+    #     for r in result4:
+    #         if r is not None:
+    #             print(r)
 
 
 if __name__ == '__main__':
