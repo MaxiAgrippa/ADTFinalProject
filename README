@@ -32,3 +32,17 @@ potential solution: https://stackoverflow.com/questions/14184099/fastest-way-to-
 Using aggregation to solve it.(FAIL)
 # ERROR: Data Structure Error Find, Need to adjust our data structure(schema)
 Maybe we can set date to an unique index to solve it. When we insert new price data, we can set the insert command to skip those are duplicated in data?
+
+# Google News API
+
+PIP requirements:
+pip install GoogleNews
+
+Struggle and change in API:
+1. first we decided to go with the "yahoo api" to get all information about stock news and quotes, but it doesn't return the date parameter which we want to use to query information for 
+ specific date. We tried to send date as a query string but that didn't succeed.
+ 
+2. NewsAPi:- News api looks for a substring and return all data that matches the substring. so, most of the time it is not stock relevant data. That's why we choose to go with
+the GoogleNewsAPi.
+
+We are using GoogleNewsAPi in this project to get all real time stock related news and quotes and for now it's working fine.
