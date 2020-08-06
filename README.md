@@ -17,6 +17,11 @@ Stock data schema screenshot:
 ![Stock data schema](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/stockDataSchema.png)
 
 
+Stock data visible in MongoDB Compass:
+
+![Stock data Compass](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/databaseCompass.png)
+
+
 Financial data schema: the schema is too big to be presented as a screenshot, therefore we are providing here the link to it:
 
 https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/schemas/financialData.json
