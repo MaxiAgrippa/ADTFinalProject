@@ -16,6 +16,11 @@ Stock data schema screenshot:
 
 ![Stock data schema](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/stockDataSchema.png)
 
+
+Financial data schema: the schema is too big to be presented as a screenshot, therefore we are providing here the link to it:
+
+https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/schemas/financialData.json
+
 # Step: MongoDB Atlas setup
 
 When it comes to MongoDB Atlas, all steps have been successfully completed. There’s a valid account, in which there’s a cluster with a database ready to receive the data from the application.
@@ -52,7 +57,7 @@ After testing a few possibilities in terms of APIs for collecting stock/financia
 
 The connections between the API and the application, as well as between the application and MongoDB have been established and are working as expected.
 
-Yahoo Finance API page:
+Yahoo Finance API page screenshot:
 
 ![Yahoo Finance](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/YahooFinanceAPI.png)
 
@@ -68,6 +73,8 @@ Struggle and change in API:
 2. NewsAPi:- News api looks for a substring and return all data that matches the substring. so, most of the time it is not stock relevant data. That's why we choose to go with the GoogleNewsAPi.
 
 We are using GoogleNewsAPi in this project to get all real time stock related news and quotes and for now it's working fine.
+
+Google News API page screenshot:
 
 ![Google News API](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/GoogleNewsAPI.png)
 
