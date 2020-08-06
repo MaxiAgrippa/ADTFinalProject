@@ -56,26 +56,43 @@ We are using GoogleNewsAPi in this project to get all real time stock related ne
 # Other application requirements and comments (miscellaneous)
 
 pip requirement:
+
 pip install --upgrade requests
+
 pip install -U pandas
+
 pip install -U yfinance
+
 pip install -U lxml
+
 pip install -U pymongo
+
 pip install -U dnspython
 
 useful link:
+
 Time convert between epoch second and normal:
+
 https://www.epochconverter.com
+
 Json beautify
+
 https://jsonformatter.curiousconcept.com
+
 Add document to an array
+
 https://docs.mongodb.com/manual/reference/operator/update/addToSet/#up._S_addToSet
+
 MongoDB aggregation pipeline
+
 https://docs.mongodb.com/manual/core/aggregation-pipeline/
+
 convert seconds since epoch to a `datetime` object
+
 https://stackoverflow.com/questions/3694487/in-python-how-do-you-convert-seconds-since-epoch-to-a-datetime-object
 
 Current Struggle:
+
 1. choose yahoo financial API(YFA) or yfinancial?(Update!: alpha_vantage(maybe))
 YFA have more information about schema, but the timestamp they are using need to convert. Moreover, it has limit.
 yfinancial is totally free and don't have any access limit. BUT, the data schema is not obvious.
