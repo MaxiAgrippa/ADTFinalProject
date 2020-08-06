@@ -38,15 +38,21 @@ MongoDB Atlas setup screenshot:
 
 Among all the options that could be used in terms of the programming language to use, the team decided to use Python, since all the group members have at least the basic knowledge to work with it. Moreover, it’s a popular language that offers a lot of support to their users, not only from the official channels, but also through all the forums and tutorials that can be found online, and it also offers good support for working with the Yahoo Finance API , JSON documents and the MongoDB framework, in the form of Python libraries.
 
-Structure of the Python application:
+Structure of the Python application (main classes):
 
 Stock Market part:
+
+- There’s an utility object called YahooFinanceAPIAuthentication to deal with connection information, like credentials, and to provide a client object that can be used throughout the application.
+
+- And there’s another class called YahooFinanceAPIManager that is responsible for connecting to the API and retrieving the data.
 
 MongoDB part:
 
 - There’s an utility object called MongoDBAtlasAPIAuthentication to deal with connection information, like credentials, and to provide a client object that can be used throughout the application.
 
 - And there’s another class called MongoDBAtlasAPIManager that is responsible for CRUD operations against the MongoDB Atlas instance.
+
+StockPriceDataCollector: class responsible for the integration of the Yahoo Finance API with MongoDB, with methods that retrieve data from the API and store the data in MongoDB Atlas according to the existing schemas.
 
 Application structure screenshot:
 
