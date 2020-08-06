@@ -2,27 +2,25 @@
 
 # Step: modeling the database
 
-Regarding the modeling of the database, the initial draft the group had in mind was composed of two different collections inside the MongoDB database instance: one for the stock data (quotes, volume, etc.) and another one for the news. 
-
-The connection between the two collections would happen with the use of two different attributes or keys: the date and the company symbol (for example, the symbol for Apple in the stock market is “AAPL”). With these two attributes, it would be possible to connect the stock data for a specific company on a specific day, with the news related to that company on the same day.
+Regarding the modeling of the database, the initial draft the group had in mind was composed of two different collections inside the MongoDB database instance: one for the stock data (quotes, volume, etc.) and another one for the news. The connection between the two collections would happen with the use of two different attributes or keys: the date and the company symbol (for example, the symbol for Apple in the stock market is "AAPL"). With these two attributes, it would be possible to connect the stock data for a specific company on a specific day, with the news related to that company on the same day.
 
 But, for the sake of simplicity, since the initial idea is to work with a restricted number of companies (no more than 5), the group decided to create individual collections for each company. Each collection’s schema is made of a document that contains the stock data for a company on a particular day plus the news related to that company on that day, in the form of an array of objects (news object). In MongoDB, this procedure is known as embedding, and it can be used for a one-to-many relationship when there’s the will to keep the database simple. It’s important to mention that the size of each document is relatively small and the growth rate is expected to be low, since the model expects only one document per company, per day.
 
-There is also the possibility of including another collection that would hold information about other technical indicators that can be useful for anyone creating an application whose goal is to predict the behavior of stocks, such as revenue, earnings and latest recommendation trends (“sell”, “buy”, “keep”, etc.). These indicators can be found in many papers and articles, e.g. http://eprints.covenantuniversity.edu.ng/4112/1/Emerging_Trend.pdf [1] or https://ieeexplore.ieee.org/abstract/document/8489208 [2].
+There is also the possibility of including another collection that would hold information about other technical indicators that can be useful for anyone creating an application whose goal is to predict the behavior of stocks, such as revenue, earnings and latest recommendation trends ("sell", "buy", "keep", etc.). These indicators can be found in many papers and articles, e.g. http://eprints.covenantuniversity.edu.ng/4112/1/Emerging_Trend.pdf [1] or https://ieeexplore.ieee.org/abstract/document/8489208 [2].
 
 This decision can still be changed, as there’s a discussion going on whether the schema should be composed of one collection per company, or if it would be better to have one single collection for all the companies. Also, in the future, if there’s a decision to expand the number of companies and/or increase the frequency of which the data is collected, to have many data points on a single day, this model would probably need to be reviewed and changed.
 
-Stock data schema screenshot:
+**Stock data schema screenshot**:
 
 ![Stock data schema](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/stockDataSchema.png)
 
 
-Stock data visible in MongoDB Compass:
+**Stock data visible in MongoDB Compass**:
 
 ![Stock data Compass](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/databaseCompass.png)
 
 
-Financial data schema: the schema is too big to be presented as a screenshot, therefore we are providing here the link to it:
+**Financial data schema**: the schema is too big to be presented as a screenshot, therefore we are providing here the link to it:
 
 https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/schemas/financialData.json
 
@@ -30,7 +28,7 @@ https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/schemas/financialData
 
 When it comes to MongoDB Atlas, all steps have been successfully completed. There’s a valid account, in which there’s a cluster with a database ready to receive the data from the application.
 
-MongoDB Atlas setup screenshot:
+**MongoDB Atlas setup screenshot**:
 
 ![MongoDB Atlas setup](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/SetupAtlas.png)
 
@@ -42,19 +40,19 @@ Structure of the Python application (main classes):
 
 Stock Market part:
 
-- There’s an utility object called YahooFinanceAPIAuthentication to deal with connection information, like credentials, and to provide a client object that can be used throughout the application.
+- There’s an utility object called **YahooFinanceAPIAuthentication** to deal with connection information, like credentials, and to provide a client object that can be used throughout the application.
 
-- And there’s another class called YahooFinanceAPIManager that is responsible for connecting to the API and retrieving the data.
+- And there’s another class called **YahooFinanceAPIManager** that is responsible for connecting to the API and retrieving the data.
 
 MongoDB part:
 
-- There’s an utility object called MongoDBAtlasAPIAuthentication to deal with connection information, like credentials, and to provide a client object that can be used throughout the application.
+- There’s an utility object called **MongoDBAtlasAPIAuthentication** to deal with connection information, like credentials, and to provide a client object that can be used throughout the application.
 
-- And there’s another class called MongoDBAtlasAPIManager that is responsible for CRUD operations against the MongoDB Atlas instance.
+- And there’s another class called **MongoDBAtlasAPIManager** that is responsible for CRUD operations against the MongoDB Atlas instance.
 
-StockPriceDataCollector: class responsible for the integration of the Yahoo Finance API with MongoDB, with methods that retrieve data from the API and store the data in MongoDB Atlas according to the existing schemas.
+**StockPriceDataCollector**: class responsible for the integration of the Yahoo Finance API with MongoDB, with methods that retrieve data from the API and store the data in MongoDB Atlas according to the existing schemas.
 
-Application structure screenshot:
+**Application structure screenshot**:
 
 ![Python structure](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/ProjectStructure.png)
 
@@ -68,7 +66,7 @@ After testing a few possibilities in terms of APIs for collecting stock/financia
 
 The connections between the API and the application, as well as between the application and MongoDB have been established and are working as expected.
 
-Yahoo Finance API page screenshot:
+**Yahoo Finance API page screenshot**:
 
 ![Yahoo Finance](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/YahooFinanceAPI.png)
 
@@ -85,7 +83,7 @@ Struggle and change in API:
 
 We are using GoogleNewsAPi in this project to get all real time stock related news and quotes and for now it's working fine.
 
-Google News API page screenshot:
+**Google News API page screenshot**:
 
 ![Google News API](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/GoogleNewsAPI.png)
 
