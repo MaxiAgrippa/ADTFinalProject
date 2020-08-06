@@ -1,7 +1,5 @@
 # Managing stock data and related companies’ news using MongoDB Atlas
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-
 # Step: modeling the database
 
 Regarding the modeling of the database, the initial draft the group had in mind was composed of two different collections inside the MongoDB database instance: one for the stock data (quotes, volume, etc.) and another one for the news. 
@@ -14,9 +12,22 @@ There is also the possibility of including another collection that would hold in
 
 This decision can still be changed, as there’s a discussion going on whether the schema should be composed of one collection per company, or if it would be better to have one single collection for all the companies. Also, in the future, if there’s a decision to expand the number of companies and/or increase the frequency of which the data is collected, to have many data points on a single day, this model would probably need to be reviewed and changed.
 
+Stock data schema screenshot:
+
+![Stock data schema](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/stockDataSchema.png)
+
+
+Financial data schema: the schema is too big to be presented as a screenshot, therefore we are providing here the link to it:
+
+https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/schemas/financialData.json
+
 # Step: MongoDB Atlas setup
 
-When it comes to MongoDB Atlas, all steps have been successfully completed. There’s a valid account, in which there’s a cluster with a database ready to receive the data from the application. 
+When it comes to MongoDB Atlas, all steps have been successfully completed. There’s a valid account, in which there’s a cluster with a database ready to receive the data from the application.
+
+MongoDB Atlas setup screenshot:
+
+![MongoDB Atlas setup](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/SetupAtlas.png)
 
 # Step: programming languages, frameworks
 
@@ -32,6 +43,10 @@ MongoDB part:
 
 - And there’s another class called MongoDBAtlasAPIManager that is responsible for CRUD operations against the MongoDB Atlas instance.
 
+Application structure screenshot:
+
+![Python structure](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/ProjectStructure.png)
+
 # Step: Build application environment (web server, general configuration, etc.)
 
 The Github repository is available at https://github.com/MaxiAgrippa/ADTFinalProject. At the moment, the application isn’t deployed to any web server or cloud environment, so it’s only running from the local environment.
@@ -41,6 +56,10 @@ The Github repository is available at https://github.com/MaxiAgrippa/ADTFinalPro
 After testing a few possibilities in terms of APIs for collecting stock/financial data, including for example Alpha Vantage, Morning Star and many implementations of the Yahoo Finance API, the group decided to use one of the latter, which can be visualized at https://rapidapi.com/apidojo/api/yahoo-finance1. 
 
 The connections between the API and the application, as well as between the application and MongoDB have been established and are working as expected.
+
+Yahoo Finance API page screenshot:
+
+![Yahoo Finance](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/YahooFinanceAPI.png)
 
 # Step: News APIs
 
@@ -54,6 +73,10 @@ Struggle and change in API:
 2. NewsAPi:- News api looks for a substring and return all data that matches the substring. so, most of the time it is not stock relevant data. That's why we choose to go with the GoogleNewsAPi.
 
 We are using GoogleNewsAPi in this project to get all real time stock related news and quotes and for now it's working fine.
+
+Google News API page screenshot:
+
+![Google News API](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/GoogleNewsAPI.png)
 
 # Other application requirements and comments (miscellaneous)
 
