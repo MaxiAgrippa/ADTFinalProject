@@ -1,7 +1,5 @@
 # Managing stock data and related companies’ news using MongoDB Atlas
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-
 # Step: modeling the database
 
 Regarding the modeling of the database, the initial draft the group had in mind was composed of two different collections inside the MongoDB database instance: one for the stock data (quotes, volume, etc.) and another one for the news. 
@@ -13,6 +11,8 @@ But, for the sake of simplicity, since the initial idea is to work with a restri
 There is also the possibility of including another collection that would hold information about other technical indicators that can be useful for anyone creating an application whose goal is to predict the behavior of stocks, such as revenue, earnings and latest recommendation trends (“sell”, “buy”, “keep”, etc.). These indicators can be found in many papers and articles, e.g. http://eprints.covenantuniversity.edu.ng/4112/1/Emerging_Trend.pdf [1] or https://ieeexplore.ieee.org/abstract/document/8489208 [2].
 
 This decision can still be changed, as there’s a discussion going on whether the schema should be composed of one collection per company, or if it would be better to have one single collection for all the companies. Also, in the future, if there’s a decision to expand the number of companies and/or increase the frequency of which the data is collected, to have many data points on a single day, this model would probably need to be reviewed and changed.
+
+![Stock data schema](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/stockDataSchema.png)
 
 # Step: MongoDB Atlas setup
 
