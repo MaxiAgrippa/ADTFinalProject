@@ -12,6 +12,8 @@ There is also the possibility of including another collection that would hold in
 
 This decision can still be changed, as there’s a discussion going on whether the schema should be composed of one collection per company, or if it would be better to have one single collection for all the companies. Also, in the future, if there’s a decision to expand the number of companies and/or increase the frequency of which the data is collected, to have many data points on a single day, this model would probably need to be reviewed and changed.
 
+Stock data schema:
+
 ![Stock data schema](https://github.com/MaxiAgrippa/ADTFinalProject/blob/master/screenshots/stockDataSchema.png)
 
 # Step: MongoDB Atlas setup
