@@ -1,5 +1,7 @@
 # Managing stock data and related companies’ news using MongoDB Atlas
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
 # Step: modeling the database
 
 Regarding the modeling of the database, the initial draft the group had in mind was composed of two different collections inside the MongoDB database instance: one for the stock data (quotes, volume, etc.) and another one for the news. 
