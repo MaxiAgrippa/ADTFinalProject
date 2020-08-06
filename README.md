@@ -14,8 +14,7 @@ About the financial data, it holds information about other technical indicators 
 
 Because the idea is to work with Big Data in a Cloud Database, the design of the data model must take into consideration a few critical aspects that aren't usually considered when a centralized database is designed. For a centralized database, the only concern is how to organize the data in an optimal way, to avoid redundancy and improve performance. But, when it comes to distributed databases, other aspects have to be considered during the design phase, like **data replication** and **data fragmentation**. The decision to use MongoDB Atlas, which is a Cloud database, was based on these needs, because MongoDB makes these aspects transparent to the users, ensuring high availability without the hassle of having to deal with fragmentation and replication strategies, although MongoDB allows the user to configure some level of replication, as seen <a href="https://www.mongodb.com/blog/post/new-to-mongodb-atlas-cross-region-replication-new-instance-sizes" target="_blank">in this article</a>.
 
-<a href="https://www.mongodb.com/blog/post/new-to-mongodb-atlas-cross-region-replication-new-instance-sizes" target="_blank" rel="noopener"><span>in this article</span></a>
-
+By using MongoDB in a cloud environment, the database will remain stable even when it faces an exponential growth in terms of data volume. MongoDB guarantees scalability and high availability for scenarios like this.
 
 **Stock data schema screenshot**:
 
