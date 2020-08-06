@@ -1,0 +1,987 @@
+{
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "$oid"
+      ]
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "earnings": {
+      "type": "object",
+      "properties": {
+        "maxAge": {
+          "type": "integer"
+        },
+        "earningsChart": {
+          "type": "object",
+          "properties": {
+            "quarterly": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "actual": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    },
+                    "estimate": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "actual",
+                    "estimate"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "actual": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    },
+                    "estimate": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "actual",
+                    "estimate"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "actual": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    },
+                    "estimate": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "actual",
+                    "estimate"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "actual": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    },
+                    "estimate": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "number"
+                        },
+                        "fmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "actual",
+                    "estimate"
+                  ]
+                }
+              ]
+            },
+            "currentQuarterEstimate": {
+              "type": "object",
+              "properties": {
+                "raw": {
+                  "type": "number"
+                },
+                "fmt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "raw",
+                "fmt"
+              ]
+            },
+            "currentQuarterEstimateDate": {
+              "type": "string"
+            },
+            "currentQuarterEstimateYear": {
+              "type": "integer"
+            },
+            "earningsDate": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "raw": {
+                      "type": "integer"
+                    },
+                    "fmt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "raw",
+                    "fmt"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "raw": {
+                      "type": "integer"
+                    },
+                    "fmt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "raw",
+                    "fmt"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "quarterly",
+            "currentQuarterEstimate",
+            "currentQuarterEstimateDate",
+            "currentQuarterEstimateYear",
+            "earningsDate"
+          ]
+        },
+        "financialsChart": {
+          "type": "object",
+          "properties": {
+            "yearly": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "integer"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "integer"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "integer"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "integer"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                }
+              ]
+            },
+            "quarterly": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "revenue": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    },
+                    "earnings": {
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "type": "object",
+                          "properties": {
+                            "$numberLong": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "$numberLong"
+                          ]
+                        },
+                        "fmt": {
+                          "type": "string"
+                        },
+                        "longFmt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "raw",
+                        "fmt",
+                        "longFmt"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "revenue",
+                    "earnings"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "yearly",
+            "quarterly"
+          ]
+        },
+        "financialCurrency": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "maxAge",
+        "earningsChart",
+        "financialsChart",
+        "financialCurrency"
+      ]
+    },
+    "recommendationTrend": {
+      "type": "object",
+      "properties": {
+        "trend": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "period": {
+                  "type": "string"
+                },
+                "strongBuy": {
+                  "type": "integer"
+                },
+                "buy": {
+                  "type": "integer"
+                },
+                "hold": {
+                  "type": "integer"
+                },
+                "sell": {
+                  "type": "integer"
+                },
+                "strongSell": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "period",
+                "strongBuy",
+                "buy",
+                "hold",
+                "sell",
+                "strongSell"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "period": {
+                  "type": "string"
+                },
+                "strongBuy": {
+                  "type": "integer"
+                },
+                "buy": {
+                  "type": "integer"
+                },
+                "hold": {
+                  "type": "integer"
+                },
+                "sell": {
+                  "type": "integer"
+                },
+                "strongSell": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "period",
+                "strongBuy",
+                "buy",
+                "hold",
+                "sell",
+                "strongSell"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "period": {
+                  "type": "string"
+                },
+                "strongBuy": {
+                  "type": "integer"
+                },
+                "buy": {
+                  "type": "integer"
+                },
+                "hold": {
+                  "type": "integer"
+                },
+                "sell": {
+                  "type": "integer"
+                },
+                "strongSell": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "period",
+                "strongBuy",
+                "buy",
+                "hold",
+                "sell",
+                "strongSell"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "period": {
+                  "type": "string"
+                },
+                "strongBuy": {
+                  "type": "integer"
+                },
+                "buy": {
+                  "type": "integer"
+                },
+                "hold": {
+                  "type": "integer"
+                },
+                "sell": {
+                  "type": "integer"
+                },
+                "strongSell": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "period",
+                "strongBuy",
+                "buy",
+                "hold",
+                "sell",
+                "strongSell"
+              ]
+            }
+          ]
+        },
+        "maxAge": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "trend",
+        "maxAge"
+      ]
+    }
+  },
+  "required": [
+    "_id",
+    "symbol",
+    "date",
+    "earnings",
+    "recommendationTrend"
+  ]
+}

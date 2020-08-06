@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "$oid"
+      ]
+    },
+    "date": {
+      "type": "integer"
+    },
+    "open": {
+      "type": "number"
+    },
+    "close": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "integer"
+    },
+    "companySymbol": {
+      "type": "string"
+    },
+    "timeZone": {
+      "type": "object",
+      "properties": {
+        "gmtOffset": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "gmtOffset"
+      ]
+    }
+  },
+  "required": [
+    "_id",
+    "date",
+    "open",
+    "close",
+    "volume",
+    "companySymbol",
+    "timeZone"
+  ]
+}
