@@ -18,4 +18,5 @@ class GoogleNewsMethods():
 if __name__ == "__main__":
     news = GoogleNewsMethods()
     output = news.newscollection("APPL", today)
+    #print(today)
     print(output)

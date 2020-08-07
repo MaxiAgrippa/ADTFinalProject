@@ -1,0 +1,130 @@
+{
+    "schema": {
+        "fields": [
+            {
+                "name": "index",
+                "type": "integer"
+            },
+            {
+                "name": "title",
+                "type": "string"
+            },
+            {
+                "name": "media",
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "desc",
+                "type": "string"
+            },
+            {
+                "name": "link",
+                "type": "string"
+            },
+            {
+                "name": "img",
+                "type": "string"
+            }
+        ],
+        "primaryKey": [
+            "index"
+        ],
+        "pandas_version": "0.20.0"
+    },
+    "data": [
+        {
+            "index": 0,
+            "title": "Apple Announces 4-1 Stock Split After Shares Surge Toward $400",
+            "media": "Bloomberg",
+            "date": "6 days ago",
+            "desc": "Apple Inc. announced a 4-for-1 stock split after shares of the iPhone maker surged more than 80% in the past year. Shareholders at the close of ...",
+            "link": "https://www.bloomberg.com/news/articles/2020-07-30/apple-announces-4-1-stock-split-after-shares-surge-toward-400",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 1,
+            "title": "Apple Smashes Revenue, iPhone Estimates in Record Third Quarter",
+            "media": "Bloomberg",
+            "date": "6 days ago",
+            "desc": "Apple Inc. reported quarterly revenue that crushed Wall Street forecasts after locked down consumers snapped up new iPhones, iPads and ...",
+            "link": "https://www.bloomberg.com/news/articles/2020-07-30/apple-smashes-revenue-iphone-estimates-in-record-third-quarter",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 2,
+            "title": "\u201cWild Ride to Nowhere\u201d: APPL, MSFT, AMZN, GOOG, FB Soar ...",
+            "media": "WOLF STREET",
+            "date": "3 weeks ago",
+            "desc": "\u201cWild Ride to Nowhere\u201d: APPL, MSFT, AMZN, GOOG, FB Soar to New High. Rest of Stock Market is a Dud, Has Been for Years. by Wolf Richter ...",
+            "link": "https://wolfstreet.com/2020/07/11/wild-ride-to-nowhere-appl-msft-amzn-goog-and-fb-soar-to-new-high-rest-of-the-stock-market-is-a-dud-has-been-for-years/",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 3,
+            "title": "Rich Get Richer: Apple And Facebook",
+            "media": "Seeking Alpha",
+            "date": "11 hours ago",
+            "desc": "Last week's price moves vaulted APPL shares above $400 on high volume and this activity has sent Apple's market cap above $1.84 trillion.",
+            "link": "https://seekingalpha.com/article/4364758-rich-get-richer-apple-and-facebook",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 4,
+            "title": "Top 3 Gainers: Google (GOOGL), Tesla (TSLA), Apple (APPL) - Can the Assets Keep Growing After Setting New Peaks?...",
+            "media": "TheTradable",
+            "date": "3 weeks ago",
+            "desc": "Top 3 Gainers: Google (GOOGL), Tesla (TSLA), Apple (APPL) - Can the Assets Keep Growing After Setting New Peaks? Usman Salis.",
+            "link": "https://thetradable.com/stocks/top-3-gainers-google-googl-tesla-tsla-apple-appl-can-the-assets-keep-growing-after-setting-new-peaks",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 5,
+            "title": "Salmon sculptures to be placed at Adventure Centre and ...",
+            "media": "Squamish Chief",
+            "date": "10 hours ago",
+            "desc": "... will be carved from a red cedar log in collaboration with local Squamish Nation community carver, 'See-appl-tun' Art Harry, the society said.",
+            "link": "https://www.squamishchief.com/news/local-news/salmon-sculptures-to-be-placed-at-adventure-centre-and-rose-park-1.24181401",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 6,
+            "title": "Wedbush ups AAPL target to $450 alongside bullish iPhone 12 prediction",
+            "media": "AppleInsider",
+            "date": "3 weeks ago",
+            "desc": "Investment bank Wedbush has now raised its APPL price target to $450 and expects it to become the first $2 trillion company during 2021, ...",
+            "link": "https://appleinsider.com/articles/20/07/13/wedbush-raises-apple-price-target-on-prediction-of-increased-iphone-12-demand",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 7,
+            "title": "Who Is On the Board of Directors at Apple, and Why?",
+            "media": "RealClearMarkets",
+            "date": "14 hours ago",
+            "desc": "Appl. e may not add another director for several years. It already has a group that serves it well as a multinational company that needs strong ...",
+            "link": "https://www.realclearmarkets.com/2020/08/05/who_is_on_the_board_of_directors_at_apple_and_why_501027.html",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 8,
+            "title": "Virginia first to roll out pandemic app from Apple, Google",
+            "media": "Washington Times",
+            "date": "12 hours ago",
+            "desc": "RICHMOND, Va. (AP) - Virginia has rolled out a smartphone app to automatically notify people if they might have been exposed to the ...",
+            "link": "https://www.washingtontimes.com/news/2020/aug/5/virginia-first-state-to-try-pandemic-app-from-appl/",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        },
+        {
+            "index": 9,
+            "title": "Apple Shares Are Playing a Dangerous Pre-Split Game",
+            "media": "CCN.com",
+            "date": "2 days ago",
+            "desc": "Consumer tech giant Apple (NASDAQ: APPL) knows how to keep shareholders happy. During last week's earnings call, the company ...",
+            "link": "https://www.ccn.com/apple-shares-playing-dangerous-pre-split-game/",
+            "img": "data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        }
+    ]
+}

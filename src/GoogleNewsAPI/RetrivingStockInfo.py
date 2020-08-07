@@ -1,27 +1,45 @@
-import sys
-sys.path.insert(1, 'D:\Sync\Advanced Database Topics\FinalProject\Max Repo\ADTFinalProject\src\MongoDBAtlasAPI')
-import pandas as pd
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 import datetime
 import time
+from GoogleNewsAPI.googlenewsapi import GoogleNewsMethods
+import pandas as pd
+from MongoDBAtlasAPI.MongoDBAtlasAPIAuthentication import MongoDBAtlasAPIAuthentication
+from GoogleNewsAPI.NewsMongoDBOperations import NewsMongoDBOperations
 
-from MongoDBAtlasAPIAuthentication import MongoDBAtlasAPIAuthentication
+class RetrivingStockInfo():
+    def __init__(self):
+        self.news = GoogleNewsMethods()
+        self.mdbaa = MongoDBAtlasAPIAuthentication()
+        self.client = self.mdbaa.get_mongodb_client()
+        # print client state
+        self.db=self.client.StockMarket
+        self.collection_names = self.db.list_collection_names()
+        self.mongodbNewsOperations = NewsMongoDBOperations()
+    
+    def intratingThroughdata(self):
+        for col_num, col in enumerate(self.collection_names):
+            if(col=='GOOGL'):
+                self.collection=self.db[col]
+                self.cursor = self.collection.find({},{"_id":0,"companySymbol":1,"date":1})
+                count =0
+                for document in self.cursor:
+                    dateForOneDoc = int(document.get('date'))
+                    companySymbol = document.get('companySymbol')
+                    if (dateForOneDoc != None):
+                        formatedDate = datetime.datetime.fromtimestamp(dateForOneDoc).strftime('%Y-%m-%d')
+                        newsList = self.news.newscollection(companySymbol,formatedDate)
+
+                        data = pd.DataFrame(newsList)
+
+                        data['companyName'] = companySymbol
+                        for index, row in data.iterrows():
+                            if(self.mongodbNewsOperations.checkForDuplication(row, formatedDate)):
+                                print("news added")
+
 
 if __name__ == "__main__":
-    mdbaa = MongoDBAtlasAPIAuthentication()
-    client = mdbaa.get_mongodb_client()
-    # print client state
-    db=client.StockMarket
-    collection_names = db.list_collection_names() 
-    for col_num, col in enumerate(collection_names):
-            collection=db[col]
-            cursor = collection.find({},{"_id":0,"companySymbol":1,"date":1})
-            count =0
-            for document in cursor:
-                dateForOneDoc = document.get('date')
-                if (dateForOneDoc != None):
-                    #print(document.get('companySymbol'))
-                    formatedDate = datetime.datetime.fromtimestamp(dateForOneDoc).strftime('%c') 
-                    print(formatedDate)
-                                                        
-                
-            print(count)
+     addData = RetrivingStockInfo()
+     addData.intratingThroughdata()

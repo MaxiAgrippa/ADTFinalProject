@@ -20,7 +20,10 @@ class JsonOperations():
             json.dump(parsed,outfile,indent=4)
     # printting data that is stored on console.
     def displayPdData(self):
-        print(self.dataInput)
+        print(self.dataInput.columns)
+        self.dataInput['companyName'] = 'APPL'
+        for index, row in self.dataInput.iterrows():
+            print(row.to_json())        
 
 
 if __name__ == "__main__":
@@ -28,3 +31,4 @@ if __name__ == "__main__":
     op = JsonOperations(news.newscollection("APPL",today))
     op.saveAsJson()
     op.displayPdData()
+    
