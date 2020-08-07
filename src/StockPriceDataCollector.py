@@ -1,5 +1,7 @@
 from src.YahooFinanceAPIManager.YahooFinanceAPIManager import *
 from src.MongoDBAtlasAPI.MongoDBAtlasAPIManager import *
+from datetime import datetime
+import time
 import json
 
 
@@ -42,10 +44,56 @@ class StockPriceDataCollector:
                     # append the data unit to datas array for insert many data in one time.
                     datas.append(data)
             # TEST:
-            print(datas)
+            # print(datas)
             # insert datas to the collection.
             try:
                 mdbaapim.store_stock_price_data(company_symbol, datas)
+                # if something goes wrong with mongoDB Atlas, print the error.
+            except Exception as e:
+                print(e)
+                return -1
+        else:
+            # If the there is no data from Yahoo Finance API Manager, show an error.
+            print("Yahoo Finance API Manager request result is Empty.")
+            return -1
+        return 0
+
+    def add_financial_data(self, region, company_symbol):
+        """
+        Add financial data of a company to the database
+        :param region: the region for which the data is collected
+        :param company_symbol: The company symbol, for example Microsoft: MSFT
+        :return: -1 indicate something wrong, 0 indicate normal
+        """
+        # rename Yahoo Finance API Manager
+        yfapim = self._yahoo_finance_api_manager
+        # rename MongoDB Atlas API Manager
+        mdbaapim = self._mongodb_atlas_api_manager
+        # request stock prices data
+        result = yfapim.get_summary(region, company_symbol)
+        # store the data units for insertion
+        data_set = []
+        # check if the request result is empty or not
+        if result.text is not None:
+            # transform the data to json object
+            json_obj = json.loads(result.text)
+            # get the date in epoch format
+            today = datetime.today().strftime('%s')
+            # TEST: date and epoch conversions: SUCCESS
+            print(today)
+            print("\n")
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(today))))
+            print("\n")
+            # populate the data object
+            data = {"symbol": company_symbol,
+                    "date": today,
+                    "earnings": json_obj["earnings"],
+                    "recommendationTrend": json_obj["recommendationTrend"]}
+            # add object to an array
+            data_set.append(data)
+            # insert data_set to the collection.
+            try:
+                mdbaapim.store_financial_data(data_set)
                 # if something goes wrong with mongoDB Atlas, print the error.
             except Exception as e:
                 print(e)
@@ -115,8 +163,11 @@ class StockPriceDataCollector:
 def main():
     # TEST: request and store stock price data for one company: SUCCESS
     spdc = StockPriceDataCollector()
+    # TEST: add financial data to a new collection in MongoDB: SUCCESS
+    # spdc.add_financial_data("US", "AAPL")
+
     # the order is: start_period, end_period, company_symbol, frequency="1d", data_filter="history"
-    spdc.add_stock_price_data("0", "1596168000", "GOOGL", "1d", "history")
+    # spdc.add_stock_price_data("0", "1596651732", "DIS", "1d", "history")
 
     # TEST: search stock price data for one company: SUCCESS
     # result = spdc.search_stock_price_data(1595856600, 1595856600, "GOOGL")

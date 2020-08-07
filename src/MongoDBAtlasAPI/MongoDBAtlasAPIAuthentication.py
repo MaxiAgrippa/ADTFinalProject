@@ -30,12 +30,13 @@ class MongoDBAtlasAPIAuthentication:
             client = MongoClient(self._format_connection_url())
         except Exception as e:
             print(e)
+            return None
         return client
 
 
 def main():
     """
-    requre the state of the database.
+    require the state of the database.
     """
     # TEST test head SUCCESS
     mdbaa = MongoDBAtlasAPIAuthentication()

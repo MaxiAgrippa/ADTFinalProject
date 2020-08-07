@@ -33,6 +33,24 @@ class MongoDBAtlasAPIManager:
             result = client.StockMarket[company_symbol].insert_many(json_data_array)
         except Exception as e:
             print(e)
+            return None
+        return result
+
+    def store_financial_data(self, json_data_array):
+        """
+        Store financial data in MongoDB Atlas
+        :param json_data_array: json data array(document array)
+        :return: result: the result from connection object.
+        """
+        # rename the authentication
+        client = self._authentication
+        try:
+            # insert many document object, automatically set _id as default.
+            # connection.database.collection.function()
+            result = client.StockMarket["FinancialData"].insert_many(json_data_array)
+        except Exception as e:
+            print(e)
+            return None
         return result
 
     def search_stock_price_data(self, company_symbol, json_filter=None, json_projection=None):
@@ -51,6 +69,7 @@ class MongoDBAtlasAPIManager:
             result = client.StockMarket[company_symbol].find(json_filter, json_projection)
         except Exception as e:
             print(e)
+            return None
         return result
 
     def drop_stock_price_data(self, company_symbol):
