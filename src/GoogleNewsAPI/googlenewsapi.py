@@ -12,6 +12,8 @@ class GoogleNewsMethods():
     # This will return a list of news for perticular stock on a given date 
     def newscollection(self, stock, date):
         self.googlenews.search(stock)
+        self.googlenews.setTimeRange('05/01/2020','05/28/2020')
+        self.googlenews.setperiod('05/15/2020')
         self.newsList = self.googlenews.result()
         return(self.newsList)
 
