@@ -137,10 +137,12 @@ Past Struggles:
 YFA have more information about schema, but the timestamp they are using need to convert. Moreover, it has limit.
 yfinancial is totally free and don't have any access limit. BUT, the data schema is not obvious.
 Temporary using YFA.
+
 **FIXED: using https://rapidapi.com/apidojo/api/yahoo-finance1.**
 
 2. About data structure:
 I guess we should give each company a "table", but currently we are only using one "table" for one company, I decide to go for it and fix it later.
+
 **FIXED: each company has its own collection in MongoDB, for stock data.**
 
 3. Reduce the data duplication caused by add stock price data.
@@ -148,4 +150,5 @@ potential solution: https://stackoverflow.com/questions/14184099/fastest-way-to-
 Using aggregation to solve it.(FAIL)
 ERROR: Data Structure Error Find, Need to adjust our data structure(schema)
 Maybe we can set date to an unique index to solve it. When we insert new price data, we can set the insert command to skip those are duplicated in data?
+
 **FIXED: in each collection for stock data (one collection per company), we save one document per day. Therefore, no more duplication.**
